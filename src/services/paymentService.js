@@ -47,12 +47,13 @@ export const paymentService = {
     return data
   },
 
-  async createPaymentApproval({ fromAccount, recipientName, recipientAccount, amount, paymentCode, referenceNumber, purpose }) {
+  async createPaymentApproval({ fromAccount, recipientName, recipientAccount, amount, currency, paymentCode, referenceNumber, purpose }) {
     const payload = JSON.stringify({
       fromAccount:      fromAccount.replace(/-/g, ''),
       recipientName,
-      recipientAccount: recipientAccount.replace(/-/g, ''),
+      toAccount:        recipientAccount.replace(/-/g, ''),
       amount,
+      currency,
       paymentCode,
       referenceNumber: referenceNumber || '',
       purpose,

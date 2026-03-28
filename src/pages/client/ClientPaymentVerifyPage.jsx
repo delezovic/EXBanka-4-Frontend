@@ -44,6 +44,7 @@ export default function ClientPaymentVerifyPage() {
           recipientName:    state.recipientName,
           recipientAccount: state.recipientAccount,
           amount:           state.amount,
+          currency:         state.fromAccount.currency,
           paymentCode:      state.paymentCode,
           referenceNumber:  state.referenceNumber,
           purpose:          state.purpose,
